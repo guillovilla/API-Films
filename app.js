@@ -26,10 +26,12 @@ server.use(express.json());
 
 server.get("/api/films", async (req, res) => {
     try{
-            const direction = req.query["order-direction"] || "asc";
-            const propriete = req.params.propriete;
-            const donneesRef = await db.collection("films").orderBy(propriete, direction).tri("propriete").get();
-            const donneesFinale = [];
+        const direction = req.query["order-direction"] || "asc";
+        const propriete = req.query["tri"] || "titre";
+
+
+        const donneesRef = await db.collection("films").orderBy(propriete, direction).get();
+        const donneesFinale = [];
 
             donneesRef.forEach((doc) =>{
                 donneesFinale.push(doc.data());
