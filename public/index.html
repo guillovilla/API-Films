@@ -7,7 +7,77 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <h1>page index</h1>
-    
+    <header>
+        <h1>API Films</h1>
+        <p>Cette API permet d'afficher, de modifier et de supprimer des films de la base de donnees.</p>
+    </header>
+    <div>
+        <h4>l'accès aux routes: </h4>
+        <a href="https://api-films-dsr0.onrender.com/">https://api-films-dsr0.onrender.com/</a>
+    </div>
+    <div>
+        <h4>Github: </h4>
+        <a href="https://github.com/guillovilla/API-Films">github.com/guillovilla</a>
+    </div>
+    <div>
+        <h2>Routes: </h2>
+        <h3>Récupérer la liste de tous les films</h3>
+        <p>GET/api/films/</p>
+        <a href="https://api-films-dsr0.onrender.com/api/films">https://api-films-dsr0.onrender.com/api/films</a>
+        <p>Paramètres possibles :</p>
+        <a href="http://localhost:3301/api/films?tri=annee&order-direction=desc">http://localhost:3301/api/films?tri=annee&order-direction=desc</a>
+        <p>tri</p>
+        <ul>
+            <li>titre</li>
+            <li>description</li>
+            <li>annee</li>
+            <li>realisation</li>
+        </ul>
+        <p>order-direction</p>
+        <ul>
+            <li>asc</li>
+            <li>dsc</li>
+        </ul>
+        <h3>Récupérer un film spécifique</h3>
+        <p>GET/api/films/:id</p>
+        <a href="https://api-films-dsr0.onrender.com/api/films/PGmeX8SXuFKucv0Qs9Lp">https://api-films-dsr0.onrender.com/api/films/PGmeX8SXuFKucv0Qs9Lp</a>
+        <h3>Ajouter un nouveau film</h3>
+        <p>POST/api/films/</p>
+        <p>Paramètres requis : Un objet film dans le corp de la requête </p>
+        <p>const film = {<br>
+            titre:"Le silence des agneaux",<br>
+            genres:["Crime","Drame","Thriller"],<br>
+            description:"Une jeune recrue du FBI interroge un psychopathe cannibale afin de l'aider à traquer un autre tueur en série.",<br>
+            titreVignette":"lesilencedesagneaux.jpg",<br>
+            realisation":"Jonathan Demme",<br>
+            annee:1991 <br>
+        }</p>
+        <h3>Modifier un film spécifique</h3>
+        <p>PUT/api/films/:id</p>
+        <p>Paramètres requis : Informations à modifier du film dans le corp de la requête </p>
+        <p>{<br>
+            titre:"Le silence des agneaux",<br>
+            annee:1991 <br>
+        }</p>
+        <h3>Supprimer un film spécifique</h3>
+        <p>DELETE/api/films/:id</p>
+    </div>
+    <div>
+        <h2>Utilisateurs: </h2>
+        <h3>S'inscrire</h3>
+        <p>POST/api/utilisateurs/inscription</p>
+        <p>Paramètres requis : Informations de l'utilisateur dans le corp de la requête </p>
+        <p>{<br>
+            courriel:"utilisateur@email.com",<br>
+            mdp:XXXXX <br>
+        }</p>
+        <h3>Se connecter</h3>
+        <p>POST/api/utilisateurs/connexion</p>
+        <p>Paramètres requis : Informations de l'utilisateur dans le corp de la requête </p>
+        <p>{<br>
+            courriel:"utilisateur@email.com",<br>
+            mdp:XXXXX <br>
+        }</p>
+    </div>
 </body>
 </html>
