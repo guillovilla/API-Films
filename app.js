@@ -4,13 +4,14 @@ const dotenv = require("dotenv");
 const fs = require("fs");
 const path = require("path");
 const mustacheExpress = require("mustache-express");
+const cors = require("cors");
 const db = require("./config/db.js");
 const { check, validationResult } = require("express-validator");
 
 
 //Configuration
 dotenv.config();
-
+app.use(cors());
 const server = express();
 /////////////////////////
 
