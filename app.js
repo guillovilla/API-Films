@@ -11,7 +11,7 @@ const { check, validationResult } = require("express-validator");
 
 //Configuration
 dotenv.config();
-app.use(cors());
+// app.use(cors());
 const server = express();
 /////////////////////////
 
